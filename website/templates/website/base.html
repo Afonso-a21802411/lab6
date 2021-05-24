@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+     <header class="jumbotron text-center">
+        <h1> Linkin Park </h1>
+         <p> Banda Rock</p>
+         <nav>
+             <a href="{% url 'website:home' %}" class="btn btn-info">Home</a>
+             <a href="{% url 'website:aqui' %}" class="btn btn-info">Membros</a>
+             <a href="{% url 'website:acola' %}" class="btn btn-info">Albums</a>
+         </nav>
+     </header>
+    <article class="container">
+        <main class="col-sm-6">
+            {% block main %}
+	        {% endblock main %}
+
+        </main>
+        <aside class="col-sm-6">
+        {% load static %}
+        <img src="{% static 'website/images/lp.jpg' %}">
+        </aside>
+    </article>
+<footer> A música mais vista é "In The End" com 1,2 mil milhoes de visualizações  </footer>
+</body>
+</html>
